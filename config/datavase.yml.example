@@ -52,3 +52,4 @@ production:
   database: rails-elearning-riho_production
   username: rails-elearning-riho
   password: <%= ENV['RAILS-ELEARNING-RIHO_DATABASE_PASSWORD'] %>
+ss
