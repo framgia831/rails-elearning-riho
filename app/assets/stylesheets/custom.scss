@@ -1,15 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/*universal*/
+/* mixins, variables, etc. */
 
-/*typography*/
+$gray-medium-light: #eaeaea;
 
-/*header*/
+/* universal */
 
-<<<<<<< HEAD
-/*footer*/
-=======
 body {
   padding-top: 60px;
 }
@@ -105,4 +102,5 @@ footer {
     }
   }
 }
->>>>>>> cfb90a8... Add basic css layout
+
+
