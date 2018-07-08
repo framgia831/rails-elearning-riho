@@ -5,6 +5,12 @@
 
 $gray-medium-light: #eaeaea;
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 /* universal */
 
 body {
@@ -62,6 +68,14 @@ p {
     border-color: #d22b2b;
 }
 
+.navbar-default .navbar-nav>li>a {
+    color: #f7efef;
+    &:hover {
+    color: #960505;
+    text-decoration: none;
+  }
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -72,7 +86,7 @@ p {
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: white;
+    color: #941010;
     text-decoration: none;
   }
 }
@@ -88,6 +102,7 @@ footer {
     color: $gray;
     &:hover {
       color: $gray-darker;
+      text-decoration: none;
     }
   }
   small {
