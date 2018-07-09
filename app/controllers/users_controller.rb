@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
+
+
   def index
     @users = User.paginate(page: params[:page], per_page: 15)
   end
@@ -15,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      log_in user
+      log_in @user
       flash[:success] = "Welcome to the E-leaning System"
       redirect_to @user
     else
