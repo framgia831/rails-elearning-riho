@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [:index, :edit, :update, :destroy]
+  before_action :require_login, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
@@ -15,7 +15,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the E-leaning System"
@@ -48,6 +47,22 @@ class UsersController < ApplicationController
     flash[:success] = "User deleted."
     user.destroy
     redirect_to users_path
+  end
+
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page], per_page: 15)
+    @avatar_users = @user.following
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page], per_page: 15)
+    @avatar_users = @user.followers
+    render 'show_follow'
   end
 
   private 

@@ -1,0 +1,18 @@
+<% provide(:title, 'Courses') %>
+
+<h1>Courses</h1>
+
+<div class="header create_btn"><%= link_to "Create a new course!", new_admin_category_path, class: 'btn btn-success btn-lg btn-block ' %></div>
+
+<div class="wrapper">
+<%= will_paginate %>
+
+<div class="row categories">
+  <%= render @categories %>
+</div>
+
+<%= will_paginate %>
+</div>
+
+
+

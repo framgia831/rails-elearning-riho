@@ -135,12 +135,6 @@ footer {
 
 /* sidebar */
 
-.btn {
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-}
-
 aside {
   section.user_info {
     margin-top: 20px;
@@ -253,3 +247,75 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+/* Categories panel */
+
+.create_btn {
+  margin-bottom: 60px;
+}
+
+.panel-body {
+    height: 100px;
+}
+
+.categories {
+  clear: both;
+  margin-bottom: 200px;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.edit_btn {
+  float: right;
+}
+
+.delete_btn {
+  float: right;
+}
+
+.manage_btn {
+  float: right;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

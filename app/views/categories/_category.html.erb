@@ -1,0 +1,13 @@
+<div class="col-sm-6" id="category-<%= category.id %>">
+	<div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title"><%= category.title %></h3>
+        </div>
+        <div class="panel-body">
+            <%= category.description %>
+        </div>
+        <%= link_to "Start now!", [:admin, category], class: 'btn btn-primary btn-block ' %>
+    </div>
+</div>
+
+
