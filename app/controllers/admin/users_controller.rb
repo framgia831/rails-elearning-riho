@@ -9,7 +9,7 @@ class Admin::UsersController < ApplicationController
     user = User.find(params[:id])
     flash[:success] = "User deleted."
     user.destroy
-    redirect_to help_path
+    redirect_to admin_users_path
   end
 
   private
@@ -17,3 +17,4 @@ class Admin::UsersController < ApplicationController
     redirect_to(root_url) unless current_user.admin?
   end
 end
+

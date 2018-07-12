@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/help', to: 'static_pages#help'
-  get '/lesson', to: 'static_pages#lesson'
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
 
   resources :users do
     member do
@@ -18,8 +18,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :destroy]
+    resources :categories
   end
-
   resources :relationships,       only: [:create, :destroy]
-
+  resources :categories,  only: [:index, :show]
 end

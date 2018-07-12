@@ -1,0 +1,15 @@
+<div class="right_side col-sm-6" id="category-<%= category.id %>" >
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title"><%= category.title %></h3>
+        </div>
+        <div class="panel-body">
+            <%= category.description %>
+        </div>
+        <%= link_to "Start now!", [:admin, category], class: 'btn btn-primary btn-block ' %>
+    </div>
+    <div class="clearfix manage_btn">
+        <div class="edit_btn"><%= link_to "Edit", edit_admin_category_path(category), class: 'btn btn-default' %></div>
+        <div class="delete_btn"><%= link_to "Delete", [:admin, category], method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %></div>
+    </div>
+</div>
