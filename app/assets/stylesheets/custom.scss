@@ -250,12 +250,16 @@ input {
 
 /* Categories panel */
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #e2dcdc;
+}
+
 .create_btn {
   margin-bottom: 60px;
 }
 
 .panel-body {
-    height: 100px;
+  height: 100px;
 }
 
 .categories {
@@ -282,9 +286,15 @@ input {
   margin-bottom: 30px;
 }
 
+button {
+  &:hover {
+   border-color: #0000002e;
+ }
+}s
 
-
-
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #dea2a2;
+}
 
 
 
