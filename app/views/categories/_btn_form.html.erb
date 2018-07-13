@@ -1,7 +1,7 @@
-<div id="btn_form">
-    <% if @category.lessons? %>
-        <%= render 'star' %>
+<div id="category_btn">
+    <% if category.lessons.find_by(user: current_user) %>
+        <%= render 'accomplished', lesson: category.lessons.find_by(user: current_user) %>
     <% else %>
-        <%= render 'accomplished' %>
+        <%= render 'start', category: category %>
     <% end %>
 </div>

@@ -1,0 +1,8 @@
+<% provide(:title, 'All words of this lesson') %>
+
+<h1>All Words of This Lesson</h1>
+<% if @words.any? %>
+	<% @words.each do |word| %>
+	<%= word %>
+	<% end %>
+<% end %>

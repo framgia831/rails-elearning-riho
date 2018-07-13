@@ -26,6 +26,21 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @lessons = @user.lessons
+
+    # @lessons.each do |lesson|
+    #   n = @lessons.count
+    #   lesson.words.count 
+    #   end 
+
+    # end
+    # @lessons = Lesson.where(user_id: current_user.id)
+
+    @j = 0 
+    @lessons.each do |lesson|
+      i = lesson.category.words.count.to_i
+      @j += i
+    end
   end
 
   def edit
@@ -73,7 +88,7 @@ class UsersController < ApplicationController
   def require_login
     unless logged_in?
       store_location
-      flash[:danger] = "Please log in."
+      flash.now[:danger] = "Please log in."
       redirect_to login_path
     end
   end
@@ -83,10 +98,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_path unless current_user?(@user)
   end
-
-  # 管理者かどうか確認
-  def admin_user
-    redirect_to(root_path) unless current_user.admin?
-  end
-
 end

@@ -5,11 +5,17 @@
         </div>
         <div class="panel-body">
             <%= category.description %>
+            <% if category.words.any? %>
+                <% category.words.each do |word| %>
+                    <%= word.content %>
+                <% end %>
+          　<% end %>
         </div>
-        <%= link_to "Start now!", [:admin, category], class: 'btn btn-primary btn-block ' %>
     </div>
     <div class="clearfix manage_btn">
-        <div class="edit_btn"><%= link_to "Edit", edit_admin_category_path(category), class: 'btn btn-default' %></div>
-        <div class="delete_btn"><%= link_to "Delete", [:admin, category], method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger' %></div>
+        <%= link_to "Edit", edit_admin_category_path(category), class: 'btn btn-default edit_btn' %>
+        <%= link_to "Delete", [:admin, category], method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger delete_btn' %>
+        <%= link_to "Add Word", new_admin_category_word_path(category), class: 'btn btn-default add_btn' %>
+        <%= link_to "Words List", admin_category_words_path(category), class: 'btn btn-primary list_btn' %>
     </div>
 </div>
