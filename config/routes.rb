@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   end
   resources :relationships,       only: [:create, :destroy]
   resources :categories,  only: [:index, :show]
+  resources :account_activations, only: [:edit]
 end
