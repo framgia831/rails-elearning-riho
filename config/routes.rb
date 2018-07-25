@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :lessons, only: [:create, :show] do 
-    resources :lesson_words, only: [:index, :new, :create, :show, :update]
+    resources :lesson_words, only: [:show, :update], path: 'words'
   end 
+  resources :activities, only: [:index, :create]
 end
-
