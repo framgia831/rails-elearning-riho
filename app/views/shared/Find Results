@@ -1,0 +1,66 @@
+Searching 6031 files for "forget"
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/app/controllers/sessions_controller.rb:
+    9        if user.activated?
+   10          log_in user
+   11:         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+   12          redirect_back_or user
+   13        else
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/app/helpers/sessions_helper.rb:
+   24    end
+   25    # 永続的セッションを破棄する
+   26:   def forget(user)
+   27:     user.forget
+   28      cookies.delete(:user_id)
+   29      cookies.delete(:remember_token)
+   ..
+   31    # 現在のユーザーをログアウトする
+   32    def log_out
+   33:     forget(current_user)
+   34      session.delete(:user_id)
+   35      @current_user = nil
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/app/models/user.rb:
+   58    end
+   59    # ユーザーのログイン情報を破棄する
+   60:   def forget
+   61      update_attribute(:remember_digest, nil)
+   62    end
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/log/development.log:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/assets/sprockets/v3.0/dK/dKqf02zn8AYkoE4jFq8VgoUgaLLpjMuCGRginqre_rw.cache:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/bootsnap-compile-cache/11/26e4f3ffe54428:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/bootsnap-compile-cache/48/d87d63e06dddfb:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/bootsnap-compile-cache/4d/0e475630f7e244:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/bootsnap-compile-cache/52/b8c28ea3ee9207:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/bootsnap-compile-cache/78/9be498b97347f1:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/bootsnap-compile-cache/a2/9ca6b721f9d46e:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/bootsnap-compile-cache/ad/f876d25041fcc4:
+    <binary>
+
+/Users/riho/Documents/kredo_lessons/rails/rails-elearning-riho/tmp/cache/bootsnap-compile-cache/b5/20bba68d90ed13:
+    <binary>
+
+48 matches across 13 files
+
+
+Searching 6031 files for "before action"
+
+0 matches

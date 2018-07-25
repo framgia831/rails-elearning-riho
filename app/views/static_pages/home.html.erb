@@ -12,31 +12,34 @@
             </section>
         </aside>
     
-        <div class="col-md-8 panel panel-default">
-            <!-- <div class="panel panel-default"> -->
+        <div class="col-md-8">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title text-center">Activities</h3>
                 </div>
-                <div class="panel-body">
-                    <% @activities.each do |activity| %>
-                        <%= render 'shared/activity', activity: activity %>
-                    <% end %>
+                <div class="panel-body activity">
+                        <% @activities.each do |activity| %>
+                            <%= render 'shared/activity', activity: activity %>
+                        <% end %>
+                    <%= will_paginate @activities %>
                 </div>
-          <!--   </div> -->
+            </div>
         </div>
     </div>
     </div>
     <% else %>
-    <div class="container">
-        <div class="col-md-6 col-md-offset-2">
-            <div class="top_image_main"><%= image_tag("top_images/top_image_main.png") %></div>
-            <div class="top_image_sub"><%= image_tag("top_images/top_image_sub.png") %></div>
-            <p> Essential words selected by computer to get 100 </p>
-            <p> Addopted mnemoric system using a synonym and the origin of a wordetymology</p>
-            <p> Parfect master of the words used frequently in TOEFL </p>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="top_image"><%= image_tag("synonym_image.jpg") %></div>
+            <ul class="text-center">
+                <li><i class="fas fa-laptop fa-fw"></i> Essential words selected by computer to get 100 in TOEFL </li>
+                <li><i class="fab fa-medapps fa-fw"></i> Addopted mnemoric system using a synonym and the origin of a wordetymology</li>
+                <li><i class="fab fa-phoenix-framework fa-fw"></i> Parfect master of the words frequently used in TOEFL </li>
+            </ul>
         </div>
-        <div class="col-md-4">
-            <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+        <div class="col-md-4 singn-us">
+            <h3><div class="text-center"><%= link_to "New User?", signup_path %></div></h3>
+            <div class="text-center"><%= link_to "Sign up now!", signup_path, class: "btn, btn-lg btn-block btn-primary" %></div>
         </div>
     </div>
 <% end %>

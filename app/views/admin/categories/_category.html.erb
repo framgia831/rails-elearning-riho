@@ -3,13 +3,11 @@
         <div class="panel-heading">
             <h3 class="panel-title"><%= category.title %></h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body category">
             <%= category.description %>
-            <% if category.words.any? %>
-                <% category.words.each do |word| %>
-                    <%= word.content %>
-                <% end %>
-          　<% end %>
+            <div class="words_list">
+                <%= category.words.pluck(:content).join(' ') if category.words.any? %>
+            </div>
         </div>
     </div>
     <div class="clearfix manage_btn">

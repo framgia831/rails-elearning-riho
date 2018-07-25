@@ -23,8 +23,13 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+ul {
+  list-style: none;
+}
+
 body {
   padding-top: 60px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 section {
@@ -69,9 +74,60 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
 
+.navbar-default .navbar-nav > li {
+  margin: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  padding-top: 15px;
+}
+
+.users li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #cc1f1f;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+     background-color: #cc1f1f; 
+}
+
+.users li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #cc1f1f;
+}
+
+.open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #e68080;
+    color: #754a4a;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    margin-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+
+.navbar-nav > li > a {
+     padding-top: 7px; 
+    padding-bottom: 15px;
+}
+
+
+.navbar-brand {
+  padding-top: 7px;
+}
+
+.fire {
+  color: #ffffff;
+  font-size: 1.8em;
+  vertical-align: middle;
+
+}
 
 .navbar-default {
     background-color: #d22b2b;
@@ -92,11 +148,11 @@ p {
 }
 
 #logo {
-  float: left;
+  /*float: left;*/
   margin-right: 10px;
-  font-size: 1.7em;
+  vertical-align: middle;
+  font-size: 1.4em;
   color: white;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -109,8 +165,10 @@ p {
 /* footer */
 
 footer {
+  background-color: #eee;
   margin-top: 45px;
   padding-top: 5px;
+  padding-bottom: 25px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
   a {
@@ -131,6 +189,10 @@ footer {
       margin-left: 15px;
     }
   }
+}
+
+.copy {
+  margin-top: 15px;
 }
 
 /* sidebar */
@@ -262,18 +324,20 @@ input {
   }
 }
 
-/* Categories panel */
+/* panel categories */
+
 
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #e2dcdc;
 }
 
 .create_btn {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .panel-body {
-  height: 100px;
+  height: 120Px;
+  padding: 10px;
 }
 
 .categories {
@@ -315,8 +379,8 @@ button {
 }
 
 .words_list {
-  margin-top: 5px;
   font-size: 16px;
+  padding-top: 2px;
 }
 
 /* Admin Lesson_words index */
@@ -356,18 +420,18 @@ button {
   float: right;
   font-size: 18px;
   background-color: #fff;
+  box-shadow: none;
 }
 
+/* activities */
 
-/* activities_view */
 .activities {
   list-style: none;
-  line-height: 1.4; 
+  line-height: 1; 
 
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
-    margin-bottom: 3px;
   }
 
   .content {
@@ -395,10 +459,8 @@ button {
   padding: 0;
 }
 
-.panel-heading {
-  width: auto;
-}
-.panel-body {
+
+.panel >.activity {
   height: auto;
   padding-top: 0;
 }
@@ -410,5 +472,40 @@ button {
 a:hover { text-decoration: none;}
 
 
+/* about */
+.explanation {
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.explanation > ul > li {
+  margin: 18px;
+}
+
+.help_link {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.about_image {
+  margin-top: 50px;
+}
 
 
+/* home */
+li {
+  margin-top: 0.8em;
+}
+
+.singn-us {
+  margin-top: 120px;
+}
+
+.top_image {
+  margin-top: 50px;
+  margin-right: 80px;
+}
+
+.fire {
+  color: #fff;
+}

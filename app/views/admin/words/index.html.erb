@@ -12,9 +12,9 @@
         </tr>
         
         <tbody>
-            <% @category.words.each do |word| %>
-                <tr>
-                    <td><%= word.content %></td>
+   <% @category.words.each do |word| %>
+               <tr>
+                   	<td><%= word.content %></td>
                     <td>
                         <% word.word_answers.each do |word_answer| %>
                             <%= word_answer.content %>

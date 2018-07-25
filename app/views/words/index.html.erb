@@ -9,32 +9,8 @@
         <th>Correctness</th>
         <th>Correct Answer</th>
     </tr>
-        <tbody>
-        <% current_user.lesson_words.each do |lesson_word| %>
-            <tr>
-                <td>
-                    <%= lesson_word.word.content %>
-                </td>
-                   
-                <td>
-                    <%= lesson_word.word_answer.content %>
-                </td>
-                <% if lesson_word.word_answer.correct? %>
-                    <td>
-                        <span> ◎ </span>
-                    </td>
-                    <td>
-                        <span> --- </span>
-                    </td>
-                <% else %>
-                    <td>
-                        <span> ×　</span>
-                    </td>
-                    <td>
-                        <span><%= lesson_word.word.correct_answer %>
-                <% end %>
-            </tr>
-        <% end %>
+    <tbody>
+        <%= render current_user.lesson_words %>
     </tbody>
 </table>
     

@@ -1,18 +1,20 @@
 <div class="col-sm-6" id="category-<%= category.id %>">
-    <div class="panel 
-        <%= category.lessons.find_by(user: current_user) ? "panel-success" : "panel-info" %>
-    ">
+    <div class="panel  
+        <% if current_user.lesson_finished?(category)  %>
+            panel-success
+        <% elsif current_user.lesson_suspended?(category) %>
+            panel-warning
+        <% else %>
+            panel-info
+        <% end %>">
+
         <div class="panel-heading">
             <h3 class="panel-title"><%= category.title %></h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body category">
             <%= category.description %>
             <div class="words_list">
-                <% if category.words.any? %>
-                    <% category.words.each do |word| %>
-                        <%= word.content %>, 
-                    <% end %>
-          　     <% end %>
+                <%= category.words.pluck(:content).join(', ') if category.words.any? %>
             </div>
         </div>
         <%= render 'btn_form', category: category %>

@@ -1,7 +1,9 @@
 <div id="category_btn">
-    <% if category.lessons.find_by(user: current_user) %>
+    <% if current_user.lesson_finished?(category) %>
         <%= render 'accomplished', lesson: category.lessons.find_by(user: current_user) %>
-    <% else %>
-        <%= render 'start', category: category %>
+    <% elsif current_user.lesson_suspended?(category) %>
+        <%= render 'restart', lesson: category.lessons.find_by(user: current_user) %>
+    <% else  %>
+    	<%= render 'start', category: category %>
     <% end %>
 </div>

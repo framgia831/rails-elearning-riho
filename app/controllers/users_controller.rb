@@ -32,12 +32,13 @@ class UsersController < ApplicationController
       i = lesson.category.words.count.to_i
       @j += i
     end
-    @activities = Activity.where(user_id: @user.id)
+    activities = Activity.where(user_id: @user.id)
+    @activities = activities.paginate(page: params[:page])
   end
 
   def edit
     @user = User.find(params[:id])
-  end
+  ends
 
   def update
     @user = User.find(params[:id])

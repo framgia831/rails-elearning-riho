@@ -18,7 +18,8 @@ class User < ApplicationRecord
                                     dependent: :destroy
   has_many :followers,  through: :passive_relationships,
                         source: :follower
-  # has_many :categories, through: :lessons
+  # has_many :categories, through: :lessons, source: :category
+
   has_many :lesson_words, through: :lessons
 
 
@@ -70,6 +71,16 @@ class User < ApplicationRecord
 
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  def lesson_finished?(category) #コースを初めて途中でやめた場合に対処
+    lesson = lessons.find_by(category: category) 
+    lesson && lesson.result?
+  end
+
+  def lesson_suspended?(category)
+    lesson = lessons.find_by(category: category) 
+    lesson && !lesson.result?
   end
   # アカウントを有効にする
   def activate

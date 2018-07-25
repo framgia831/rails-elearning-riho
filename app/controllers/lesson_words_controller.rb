@@ -1,6 +1,7 @@
 class LessonWordsController < ApplicationController
 
   def show
+
     @lesson = Lesson.find(params[:lesson_id])
     @lesson_word = LessonWord.find(params[:id])
   end
@@ -21,5 +22,4 @@ class LessonWordsController < ApplicationController
       end
     end
   end
-  
 end

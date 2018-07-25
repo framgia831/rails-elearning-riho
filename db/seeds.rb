@@ -170,7 +170,7 @@ words_3 = [
     word_answers_attributes: [
       { content: "harvest" },
       { content: "trench" },
-      { content: "exclud", correct: true },
+      { content: "exclude", correct: true },
       { content: "aggregation" }
     ]}, {
     content: "permission",
@@ -368,16 +368,3 @@ category = Category.find(6)
 words_6.each do |word|
   category.words.create!(word)
 end
-
-
-
-
-
-
-
-
-
-
-
-
-

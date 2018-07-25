@@ -2,7 +2,7 @@ class Admin::WordsController < ApplicationController
 
   def index
     @category = Category.find(params[:category_id])
-    @words = Word.all
+
   end
 
   def new
@@ -26,7 +26,6 @@ class Admin::WordsController < ApplicationController
   def edit
     @category = Category.find(params[:category_id])
     @word = Word.find(params[:id])
-    4.times{@word.word_answers}
   end
 
   def update
@@ -54,10 +53,3 @@ class Admin::WordsController < ApplicationController
     params.require(:word).permit(:content, word_answers_attributes: [:id, :content, :correct]) #ここcorrect忘れないで
   end
 end
-
-
-
-
-
-
-
