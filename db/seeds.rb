@@ -368,16 +368,3 @@ category = Category.find(6)
 words_6.each do |word|
   category.words.create!(word)
 end
-
-
-
-
-
-
-
-
-
-
-
-
-

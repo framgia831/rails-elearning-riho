@@ -1,0 +1,24 @@
+<tr>
+    <td>
+        <%= lesson_word.word.content %>
+    </td>
+    <td>
+        <%= lesson_word.word_answer.content %>   
+    </td>
+    <% if lesson_word.word_answer.correct? %>
+        <td>
+            <span> ◎ </span>
+        </td>
+        <td>
+            <span> --- </span>
+        </td>
+    <% else %>
+        <td>
+            <span> ×　</span>
+        </td>
+        <td>
+            <span><%= lesson_word.word.correct_answer %></span>
+        </td>
+    <% end %>
+</tr>
+

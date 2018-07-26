@@ -33,13 +33,6 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
-  def show
-    @category = Category.find(params[:id])
-    @number = 0
-    @lesson = @category.lessons.find(params[:user_id])
-    redirect_to @lesson.lesson_words  #current_userのlesson_wordsに飛びたい　どうしたら？
-  end
-
   def destroy
     category = Category.find(params[:id])
     flash[:success] = "The course wasss deleted."

@@ -16,17 +16,10 @@
                 <tr>
                     <td><%= word.content %></td>
                     <td>
-                        <% word.word_answers.each do |word_answer| %>
-                            <%= word_answer.content %>
-                            <% if word_answer.correct? %>
-                                <span>(◎)/ </span>
-                            <% else %>
-                                <span>/ </span>
-                            <% end %>
-                        <% end %>
+                        <%= word.word_answers.map{|answer| answer.correct? ? "#{answer.content} (◎)" : answer.content }.join(' / ') %>
                     </td>
                     <td>
-                        <span><%= link_to "delete", admin_category_word_path(word.category, word), 
+                        <span><%= link_to "delete", [:admin, word.category, word], 
                                                 method: :delete, 
                                                 data: { confirm: "You sure?" },
                                                 class: 'btn btn-danger delete_btn' %></span>
