@@ -1,0 +1,34 @@
+<% provide(:title, 'Words List') %>
+
+<h1>Words List</h1>
+<h2>course: <%= @category.title %></h2>
+    
+<% if @category.words.any? %>
+    <table class="table table-bordered">
+        <tr class="success">
+            <th>Lesson Words</th>
+            <th>Word Answers</th>
+            <th>Action</th>
+        </tr>
+        
+        <tbody>
+            <% @category.words.each do |word| %>
+                <tr>
+                    <td><%= word.content %></td>
+                    <td>
+                        <%= word.word_answers.map{|answer| answer.correct? ? "#{answer.content} (◎)" : answer.content }.join(' / ') %>
+                    </td>
+                    <td>
+                        <span><%= link_to "delete", [:admin, word.category, word], 
+                                                method: :delete, 
+                                                data: { confirm: "You sure?" },
+                                                class: 'btn btn-danger delete_btn' %></span>
+                        <span><%= link_to "Edit", edit_admin_category_word_path(word.category, word),
+                                                class: 'btn btn-warning edit_btn' %></span>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>
+

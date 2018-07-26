@@ -1,0 +1,39 @@
+<div id="admin_words_form">
+    <%= form_for([:admin, @category, @word]) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        
+        <div class="row">
+            <div class="col-xs-4 control-label">
+                <div class="row">
+                    <div class="col-xs-3"><%= f.label :word %></div>
+                    <div class="col-xs-9"><%= f.text_field :content, class: 'form-control' %></div>
+                </div>
+            </div>
+            
+            <div class="col-xs-8">
+                <div class="row">
+                    <%= f.fields_for(:word_answers) do |a| %>
+                        <div class="col-xs-10">
+                            <%= a.text_field :content, class: 'form-control' %>
+                        </div>
+                        <div class="col-xs-2">
+                            <%= a.check_box(:correct) %>correct answer    
+                        </div>
+                    <% end %>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10">
+                    <div class="form-group">
+                        <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<script>
+    $("#admin_words_form input[type='checkbox']").change(function(){
+        $("#admin_words_form input[type='checkbox']:checked").not(this).prop('checked', false);
+    });
+</script>

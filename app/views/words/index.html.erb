@@ -1,0 +1,16 @@
+<% provide(:title, 'Words Learned') %>
+
+<h1>Words Learned</h1>
+
+<table class="table table-bordered">
+    <tr class="success">
+        <th>Words Learned</th>
+        <th>Your Answer</th>
+        <th>Correctness</th>
+        <th>Correct Answer</th>
+    </tr>
+    <tbody>
+        <%= render current_user.lesson_words %>
+    </tbody>
+</table>
+    

@@ -1,0 +1,26 @@
+<% provide(:title, 'Result') %>
+
+<h1>Result page</h1>
+<h2>course: <%= @category.title %></h2>
+
+<table class="table table-bordered">
+    <tr class="success">
+        <th>
+            Word
+        </th>
+        <th>
+            Your Answer
+        </th>
+        <th>
+            Correctness
+        </th>
+        <th>
+            Correct Answer
+        </th>
+
+    </tr>
+    
+    <tbody>
+        <%= render @lesson_words %>
+    </tbody>
+</table>

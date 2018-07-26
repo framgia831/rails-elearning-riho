@@ -287,6 +287,10 @@ input {
   display: block;
 }
 
+.add_btn {
+  float: left;
+}
+
 .edit_btn {
   float: right;
 }
@@ -304,16 +308,55 @@ button {
   &:hover {
    border-color: #0000002e;
  }
-}s
+}
 
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #dea2a2;
 }
 
+.words_list {
+  margin-top: 5px;
+  font-size: 16px;
+}
 
+/* Admin Lesson_words index */
 
+.correct_answer {
+  color: red;
+}
 
+/* word_lesson_view */
 
+.course_title {
+  font-size: 15px;
+  color: ddd;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.lesson_word {
+  margin-top: 65px;
+  font-size: 45Px;
+  margin-left: 10px;
+
+}
+
+.word_answer_btn {
+  
+  form {
+     margin-bottom: 20px;
+  }
+}
+
+.btn_answer {
+ font-size: 25px;
+}
+
+.progress {
+  float: right;
+  font-size: 18px;
+  background-color: #fff;
+}
 
 
 

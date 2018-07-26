@@ -4,9 +4,11 @@ class ApplicationController < ActionController::Base
 
   private
   def require_login
-    store_location
-    flash[:danger] = "Please log in."
-    redirect_to login_path
+    unless logged_in?
+      store_location
+      flash.now[:danger] = "Please log in."
+      redirect_to login_path
+    end
   end
   
   def admin_user
