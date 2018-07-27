@@ -27,20 +27,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @lessons = @user.lessons
-
-    # @lessons.each do |lesson|
-    #   n = @lessons.count
-    #   lesson.words.count 
-    #   end 
-
-    # end
-    # @lessons = Lesson.where(user_id: current_user.id)
-
     @j = 0 
     @lessons.each do |lesson|
       i = lesson.category.words.count.to_i
       @j += i
     end
+    @activities = Activity.where(user_id: @user.id)
   end
 
   def edit

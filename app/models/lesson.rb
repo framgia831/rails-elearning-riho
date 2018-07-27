@@ -3,6 +3,8 @@ class Lesson < ApplicationRecord
   belongs_to :user
   has_many :lesson_words, dependent: :destroy
   has_many :word_answers, through: :lesson_words
+  has_many :activities, as: :action#ここであってる？LessooWrdsに記述？
+  after_update :create_relationship_activity
 
   def correct_answers
   	word_answers.where(correct: true)
@@ -16,11 +18,10 @@ class Lesson < ApplicationRecord
   		i = lesson.category.words.count.to_i
   		j += i
   	end
-  	 return  "ok"
-
   end
-
 end
 
-
-
+private
+def create_relationship_activity 
+  activities.create(user_id: user.id)
+end
