@@ -7,10 +7,13 @@ class StaticPagesController < ApplicationController
   	  @j = 0 
     	@lessons.each do |lesson|
     		i = lesson.category.words.count.to_i
-    		# @i += j
-    		# j = @i
     		@j += i
     	end
+
+      following_ids = "SELECT followed_id FROM relationships
+                     WHERE follower_id = :user_id"
+      @activities = Activity.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: current_user.id)
     end
   end
 end

@@ -16,6 +16,21 @@
         <section>
             <%= render 'shared/words_learned' %>
         </section>
-        
     </aside>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Activities</h3>
+            </div>
+            <div class="panel-body">
+                <% if @activities.any? %>
+                    <% @activities.each do |activity| %>
+                        <%= render 'shared/activity', activity: activity %>
+                    <% end %>
+                <% else %>
+                    <h3><div class="text-center">We are waiting for the first action!!!</div><h3>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </div>

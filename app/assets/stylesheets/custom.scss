@@ -359,29 +359,55 @@ button {
 }
 
 
+/* activities_view */
+.activities {
+  list-style: none;
+  line-height: 1.4; 
 
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+    margin-bottom: 3px;
+  }
 
+  .content {
+    display: block;
+    margin-left: 60px;
+  }
 
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .gravatar {
+    float: left;
+    margin-left: 6px;
+  }
+}
 
+.panel {
+  margin-top: 20px;
+}
+.panel-default {
+  padding: 0;
+}
 
+.panel-heading {
+  width: auto;
+}
+.panel-body {
+  height: auto;
+  padding-top: 0;
+}
 
+.course {
+  color: green;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+a:hover { text-decoration: none;}
 
 
 

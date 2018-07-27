@@ -1,0 +1,19 @@
+<div class="activities">
+    <li>
+        <% if activity.action_type == "Relationship" %>
+            <%= gravatar_for activity.action.follower, size: 50 %>
+            <span class="user content"><%= link_to activity.action.follower.name, activity.action.follower %> followed 
+            <%= link_to activity.action.followed.name, activity.action.followed%></span>
+            <span class="timestamp">
+                <%= time_ago_in_words(activity.action.created_at) %>ago.
+            </span>
+        <% else %>
+            <%= gravatar_for activity.action.user, size: 50 %>
+            <div class="user content"><%= link_to activity.action.user.name, activity.action.user %>  accomplished <span class="course"><%= '"' + activity.action.category.title + '"' %></span>
+            </div>
+            <span class="timestamp">
+                <%= time_ago_in_words(activity.action.created_at) %> ago.
+            </span>
+        <% end %>
+    </li>
+</div>
