@@ -41,12 +41,15 @@ class Admin::WordsController < ApplicationController
 
   def destroy
     @category = Category.find(params[:category_id])
-    word = Word.find(params[:id])
-    word.destroy
-    flash.now[:success] = "The word was deleted."
-    redirect_to admin_category_words_path(@category, word)
+    if Word.find_by(params[:id]).nil #I put this code ....
+      word = Word.find_by(params[:id])
+      word.destroy
+      flash[:success] = "The word was deleted Successfully."
+      redirect_to admin_category_words_path(@category, word)
+    else
+      flash.now[:danger] = "The word was already deleted."
+      render 'index'
   end
-
 
   private
   def word_params

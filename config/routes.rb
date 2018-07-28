@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/admin', to: 'static_pages#admin'
-  # get words', to: 'static_pages#words'
 
   resources :users do
     member do

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_login, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,  only: :destroy
 
 
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-  ends
+  end
 
   def update
     @user = User.find(params[:id])
